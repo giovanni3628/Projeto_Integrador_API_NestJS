@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { PostagemController } from './postagem/controllers/postagem.controller';
 import { Postagem } from './postagem/entities/postagem.entity';
 import { PostagemModule } from './postagem/modules/postagem.module';
+import { PostagemService } from './postagem/services/postagem.service';
 
 @Module({
   imports: [
@@ -18,7 +20,7 @@ import { PostagemModule } from './postagem/modules/postagem.module';
     PostagemModule
     
   ],
-  controllers: [],
-  providers: [],
+  controllers: [PostagemController],
+  providers: [PostagemService],
 })
 export class AppModule {}
