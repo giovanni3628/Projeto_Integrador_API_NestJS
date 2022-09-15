@@ -4,6 +4,8 @@ import { PostagemController } from './postagem/controllers/postagem.controller';
 import { Postagem } from './postagem/entities/postagem.entity';
 import { PostagemModule } from './postagem/modules/postagem.module';
 import { PostagemService } from './postagem/services/postagem.service';
+import { Tema } from './tema/entities/tema.entity';
+import { TemaModule } from './tema/tema.module';
 
 @Module({
   imports: [
@@ -14,10 +16,11 @@ import { PostagemService } from './postagem/services/postagem.service';
       username: 'root',
       password: '@Logitech1',
       database: 'db_projeto',
-      entities: [Postagem],
+      entities: [Postagem, Tema],
       synchronize: true
     }),
-    PostagemModule
+    PostagemModule,
+    TemaModule
     
   ],
   controllers: [PostagemController],

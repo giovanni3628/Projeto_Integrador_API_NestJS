@@ -1,5 +1,6 @@
 import { IsNotEmpty, MaxLength } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Tema } from "src/tema/entities/tema.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('tb_postagem')
 export class Postagem {
@@ -19,4 +20,9 @@ export class Postagem {
     @MaxLength(150)
     @Column({nullable: false, length: 150})
     titulo: string
+
+    @ManyToOne(() => Tema, (tema) => tema.postagem, {
+        onDelete: "CASCADE"
+    })
+    tema: Tema
 }
