@@ -1,7 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, HttpStatus, ParseIntPipe, Put } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { Tema } from './entities/tema.entity';
 import { TemaService } from './tema.service';
 
+@ApiTags('Tema')
 @Controller('/tema')
 export class TemaController {
   constructor(private readonly temaService: TemaService) {}
