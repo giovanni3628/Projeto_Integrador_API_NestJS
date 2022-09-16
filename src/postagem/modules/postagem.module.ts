@@ -4,8 +4,8 @@ import { Postagem } from "../entities/postagem.entity";
 
 @Module({
     imports: [TypeOrmModule.forFeature([Postagem])],
-    providers: [],
-    controllers: [],
+    providers: [PostagemService],
+    controllers: [PostagemController ],
     exports: [TypeOrmModule],
 })
 export class PostagemModule {}

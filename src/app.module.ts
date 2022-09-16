@@ -8,7 +8,7 @@ import { TemaModule } from './tema/tema.module';
 
 @Module({
   imports: [
-    
+    /*
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -19,7 +19,8 @@ import { TemaModule } from './tema/tema.module';
       entities: [Postagem, Tema],
       synchronize: true
     }),
-    /*
+    */
+    
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
@@ -30,7 +31,7 @@ import { TemaModule } from './tema/tema.module';
       },
       autoLoadEntities: true,
       synchronize: true
-    }),*/
+    }),
     PostagemModule,
     TemaModule
     
