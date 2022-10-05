@@ -14,6 +14,11 @@ export class Postagem {
     @ApiProperty()
     @Column()
     imagem: string
+    
+    @ApiProperty()
+    @IsNotEmpty()
+    @Column({nullable: false})
+    meta: string
 
     @ApiProperty()
     @IsNotEmpty()
